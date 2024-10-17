@@ -5,10 +5,10 @@
 ### Passo a passo
 Clone Repositório
 ```sh
-git clone -b laravel-10-com-php-8.1 https://github.com/especializati/setup-docker-laravel.git app-laravel
+git clone https://github.com/mauricio-camargoo/projeto-integrador-2.git projeto-integrador-2
 ```
 ```sh
-cd app-laravel
+cd projeto-integrador-2
 ```
 
 
@@ -20,7 +20,7 @@ cp .env.example .env
 
 Atualize as variáveis de ambiente do arquivo .env
 ```dosini
-APP_NAME="Especializa Ti"
+APP_NAME="Projeto Integrador 2"
 APP_URL=http://localhost:8989
 
 DB_CONNECTION=mysql
