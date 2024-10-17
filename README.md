@@ -1,4 +1,41 @@
 
+### Para funcionar o projeto
+1) Se tiver o Docker instalado, remova!
+
+2) Habilite o WSL no Windows 10
+```sh
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+```
+```sh
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+```
+
+3) Habilitar o WSL para a versão 2
+```sh
+wsl --set-default-version 2
+```
+
+4) Instalar o Ubuntu na Microsoft Store
+
+5) Instalar o Windows Terminal
+
+6) Desabilitar o Hyper-v (para desabilitar voce precisa ir em ativar e desativar recursos do windows)
+
+7) Criar o arquivo .wslconfig em "C:\Users\<seu_usuario>"
+```sh
+[wsl2]
+memory=8GB
+processors=4
+swap=2GB
+```
+8) Instalar o Docker
+Depois com o docker instalado vá em configurações/recursos/wsl integration no docker e ative:
+1. Enable integration with my default WSL distro
+2. ubuntu
+
+Salve e reinicie o docker... feito isso prossiga para rodar o projeto
+
+
 ### Passo a passo
 Clone Repositório
 ```sh
