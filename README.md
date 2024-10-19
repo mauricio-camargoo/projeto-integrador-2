@@ -39,7 +39,7 @@ Salve e reinicie o docker... feito isso prossiga para rodar o projeto
 ### Passo a passo
 Clone Repositório
 ```sh
-git clone https://github.com/mauricio-camargoo/projeto-integrador-2.git projeto-integrador-2
+git clone -b v1 https://github.com/mauricio-camargoo/projeto-integrador-2.git projeto-integrador-2
 ```
 ```sh
 cd projeto-integrador-2
