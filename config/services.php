@@ -31,4 +31,8 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'cep' => [
+        'endpoint' => \Gabrielmoura\LaravelCep\EndpointOption::VIACEP, // https://github.com/mauricio-camargoo/laravel-cep
+    ],
+
 ];
