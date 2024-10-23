@@ -1,247 +1,135 @@
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+            {{ __('Cadastro de usuários') }}
+        </h2>
+    </x-slot>
 
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-900 dark:text-gray-100 container">
+                    <x-alert />
 
-<div class="card card-primary">
-<div class="card-header">
-<h3 class="card-title">Quick Example</h3>
-</div>
+                    <form action="{{ Route('users.store') }}" method="POST">
+                        @csrf
+                        <div class="row">
+                            <div class="input-group mb-3 col">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                <input name="name" type="text" value="{{ old('name') }}" class="form-control" placeholder="Seu nome">
+                            </div>
+                            <div class="input-group mb-3 col">
+                                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                <input name="email" type="email" value="{{ old('email') }}" class="form-control" placeholder="Email">
+                            </div>
 
+                            <div class="input-group mb-3 col">
+                                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                <input name="password" type="password" value="{{ old('password') }}" class="form-control" placeholder="Senha">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-group mb-3 col">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                <input name="cpf" type="text" value="{{ old('cpf') }}" class="form-control" placeholder="Seu CPF">
+                            </div>
+                            <div class="input-group mb-3 col">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                <input name="rg" type="text" value="{{ old('rg') }}" class="form-control" placeholder="Seu RG">
+                            </div>
+                            <div class="input-group mb-3 col">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                <select class="form-select form-select-lg">
+                                    <option name="permission" selected>Permissão</option>
+                                    <option name="permission" value="{{ old('permission') }}">Usuário</option>
+                                    <option name="permission" value="{{ old('permission') }}">Administrador</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-group mb-3 col">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                <input name="birthday" type="text" value="{{ old('birthday') }}" class="form-control" placeholder="Data de Nascimento">
+                            </div>
+                            <div class="input-group mb-3 col">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                <input name="phonecel" type="text" value="{{ old('phonecel') }}" class="form-control" placeholder="Celular">
+                            </div>
+                            <div class="input-group mb-3 col">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                <input name="whatsapp" type="text" value="{{ old('whatsapp') }}" class="form-control" placeholder="Whatsapp">
+                            </div>
+                            <div class="input-group mb-3 col">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                <input name="telegram" type="text" value="{{ old('telegram') }}" class="form-control" placeholder="Telegram">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-group mb-3 col">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                <input name="cep" type="text" value="{{ old('cep') }}" class="form-control" placeholder="Seu CEP">
+                            </div>
+                            <div class="input-group mb-3 col">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                <input name="logradouro" type="text" value="{{ old('logradouro') }}" class="form-control" placeholder="Rua">
+                            </div>
+                            <div class="input-group mb-3 col">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                <input name="complemento" type="text" value="{{ old('complemento') }}" class="form-control" placeholder="Complemento">
+                            </div>
+                            <div class="input-group mb-3 col">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                <input name="unidade" type="text" value="{{ old('unidade') }}" class="form-control" placeholder="Unidade">
+                            </div>
+                        </div>
 
-<form>
-<div class="card-body">
-<div class="form-group">
-<label for="exampleInputEmail1">Email address</label>
-<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-</div>
-<div class="form-group">
-<label for="exampleInputPassword1">Password</label>
-<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-</div>
-<div class="form-group">
-<label for="exampleInputFile">File input</label>
-<div class="input-group">
-<div class="custom-file">
-<input type="file" class="custom-file-input" id="exampleInputFile">
-<label class="custom-file-label" for="exampleInputFile">Choose file</label>
-</div>
-<div class="input-group-append">
-<span class="input-group-text">Upload</span>
-</div>
-</div>
-</div>
-<div class="form-check">
-<input type="checkbox" class="form-check-input" id="exampleCheck1">
-<label class="form-check-label" for="exampleCheck1">Check me out</label>
-</div>
-</div>
+                        <div class="row">
+                            <div class="input-group mb-3 col">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                <input name="bairro" type="text" value="{{ old('bairro') }}" class="form-control" placeholder="Bairro">
+                            </div>
+                            <div class="input-group mb-3 col">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                <input name="localidade" type="text" value="{{ old('localidade') }}" class="form-control" placeholder="Cidade">
+                            </div>
+                            <div class="input-group mb-3 col">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                <input name="uf" type="text" value="{{ old('uf') }}" class="form-control" placeholder="Sigla do Estado">
+                            </div>
+                            <div class="input-group mb-3 col">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                <input name="estado" type="text" value="{{ old('estado') }}" class="form-control" placeholder="Estado">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-group mb-3 col">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                <input name="regiao" type="text" value="{{ old('regiao') }}" class="form-control" placeholder="Região">
+                            </div>
+                            <div class="input-group mb-3 col">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                <input name="ibge" type="text" value="{{ old('ibge') }}" class="form-control" placeholder="IBGE">
+                            </div>
+                            <div class="input-group mb-3 col">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                <input name="gia" type="text" value="{{ old('gia') }}" class="form-control" placeholder="GIA">
+                            </div>
+                            <div class="input-group mb-3 col">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                <input name="ddd" type="text" value="{{ old('ddd') }}" class="form-control" placeholder="DDD">
+                            </div>
+                            <div class="input-group mb-3 col">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                <input name="siafi" type="text" value="{{ old('siafi') }}" class="form-control" placeholder="SIAFI">
+                            </div>
+                        </div>
 
-<div class="card-footer">
-<button type="submit" class="btn btn-primary">Submit</button>
-</div>
-</form>
-</div>
-
-
-<div class="card card-primary">
-<div class="card-header">
-<h3 class="card-title">Different Styles</h3>
-</div>
-
-<div class="card-body">
-<h4>Input</h4>
-<div class="form-group">
-<label for="exampleInputBorder">Bottom Border only <code>.form-control-border</code></label>
-<input type="text" class="form-control form-control-border" id="exampleInputBorder" placeholder=".form-control-border">
-</div>
-<div class="form-group">
-<label for="exampleInputBorderWidth2">Bottom Border only 2px Border <code>.form-control-border.border-width-2</code></label>
-<input type="text" class="form-control form-control-border border-width-2" id="exampleInputBorderWidth2" placeholder=".form-control-border.border-width-2">
-</div>
-<div class="form-group">
-<label for="exampleInputRounded0">Flat <code>.rounded-0</code></label>
-<input type="text" class="form-control rounded-0" id="exampleInputRounded0" placeholder=".rounded-0">
-</div>
-<h4>Custom Select</h4>
-<div class="form-group">
-<label for="exampleSelectBorder">Bottom Border only <code>.form-control-border</code></label>
-<select class="custom-select form-control-border" id="exampleSelectBorder">
-<option>Value 1</option>
-<option>Value 2</option>
-<option>Value 3</option>
-</select>
-</div>
-<div class="form-group">
-<label for="exampleSelectBorderWidth2">Bottom Border only <code>.form-control-border.border-width-2</code></label>
-<select class="custom-select form-control-border border-width-2" id="exampleSelectBorderWidth2">
-<option>Value 1</option>
-<option>Value 2</option>
-<option>Value 3</option>
-</select>
-</div>
-<div class="form-group">
-<label for="exampleSelectRounded0">Flat <code>.rounded-0</code></label>
-<select class="custom-select rounded-0" id="exampleSelectRounded0">
-<option>Value 1</option>
-<option>Value 2</option>
-<option>Value 3</option>
-</select>
-</div>
-</div>
-
-</div>
-
-
-<div class="card card-info">
-<div class="card-header">
-<h3 class="card-title">Input Addon</h3>
-</div>
-<div class="card-body">
-<div class="input-group mb-3">
-<div class="input-group-prepend">
-<span class="input-group-text">@</span>
-</div>
-<input type="text" class="form-control" placeholder="Username">
-</div>
-<div class="input-group mb-3">
-<input type="text" class="form-control">
-<div class="input-group-append">
-<span class="input-group-text">.00</span>
-</div>
-</div>
-<div class="input-group">
-<div class="input-group-prepend">
-<span class="input-group-text">$</span>
-</div>
-<input type="text" class="form-control">
-<div class="input-group-append">
-<span class="input-group-text">.00</span>
-</div>
-</div>
-<h4>With icons</h4>
-<div class="input-group mb-3">
-<div class="input-group-prepend">
-<span class="input-group-text"><i class="fas fa-envelope"></i></span>
-</div>
-<input type="email" class="form-control" placeholder="Email">
-</div>
-<div class="input-group mb-3">
-<input type="text" class="form-control">
-<div class="input-group-append">
-<span class="input-group-text"><i class="fas fa-check"></i></span>
-</div>
-</div>
-<div class="input-group">
-<div class="input-group-prepend">
-<span class="input-group-text">
-<i class="fas fa-dollar-sign"></i>
-</span>
-</div>
-<input type="text" class="form-control">
-<div class="input-group-append">
-<div class="input-group-text"><i class="fas fa-ambulance"></i></div>
-</div>
-</div>
-<h5 class="mt-4 mb-2">With checkbox and radio inputs</h5>
-<div class="row">
-<div class="col-lg-6">
-<div class="input-group">
-<div class="input-group-prepend">
-<span class="input-group-text">
-<input type="checkbox">
-</span>
-</div>
-<input type="text" class="form-control">
-</div>
-
-</div>
-
-<div class="col-lg-6">
-<div class="input-group">
-<div class="input-group-prepend">
-<span class="input-group-text"><input type="radio"></span>
-</div>
-<input type="text" class="form-control">
-</div>
-
-</div>
-
-</div>
-
-<h5 class="mt-4 mb-2">With buttons</h5>
-<p>Large: <code>.input-group.input-group-lg</code></p>
-<div class="input-group input-group-lg mb-3">
-<div class="input-group-prepend">
-<button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
-Action
-</button>
-<ul class="dropdown-menu">
-<li class="dropdown-item"><a href="#">Action</a></li>
-<li class="dropdown-item"><a href="#">Another action</a></li>
-<li class="dropdown-item"><a href="#">Something else here</a></li>
-<li class="dropdown-divider"></li>
-<li class="dropdown-item"><a href="#">Separated link</a></li>
-</ul>
-</div>
-
-<input type="text" class="form-control">
-</div>
-
-<p>Normal</p>
-<div class="input-group mb-3">
-<div class="input-group-prepend">
-<button type="button" class="btn btn-danger">Action</button>
-</div>
-
-<input type="text" class="form-control">
-</div>
-
-<p>Small <code>.input-group.input-group-sm</code></p>
-<div class="input-group input-group-sm">
-<input type="text" class="form-control">
-<span class="input-group-append">
-<button type="button" class="btn btn-info btn-flat">Go!</button>
-</span>
-</div>
-
-</div>
-
-</div>
-
-
-<div class="card card-info">
-<div class="card-header">
-<h3 class="card-title">Horizontal Form</h3>
-</div>
-
-
-<form class="form-horizontal">
-<div class="card-body">
-<div class="form-group row">
-<label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-<div class="col-sm-10">
-<input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-</div>
-</div>
-<div class="form-group row">
-<label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-<div class="col-sm-10">
-<input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-</div>
-</div>
-<div class="form-group row">
-<div class="offset-sm-2 col-sm-10">
-<div class="form-check">
-<input type="checkbox" class="form-check-input" id="exampleCheck2">
-<label class="form-check-label" for="exampleCheck2">Remember me</label>
-</div>
-</div>
-</div>
-</div>
-
-<div class="card-footer">
-<button type="submit" class="btn btn-info">Sign in</button>
-<button type="submit" class="btn btn-default float-right">Cancel</button>
-</div>
-
-</form>
-</div>
-
+                        <div class="row">
+                            <button class="btn btn-primary" type="submit">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</x-app-layout>
