@@ -97,6 +97,21 @@ Gere a key do projeto Laravel
 php artisan key:generate
 ```
 
+Gere os dados fake no banco de dados
+```sh
+php artisan migrate --seed
+```
+
 
 Acesse o projeto
 [http://localhost:8989](http://localhost:8989)
+
+login
+```sh
+admin@admin.com
+```
+
+login
+```sh
+password
+```
