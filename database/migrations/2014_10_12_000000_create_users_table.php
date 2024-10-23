@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('rg')->nullable();
             $table->string('cep')->nullable();
             $table->string('logradouro')->nullable();
+            $table->string('numero')->nullable();
             $table->string('complemento')->nullable();
             $table->string('unidade')->nullable();
             $table->string('bairro')->nullable();

@@ -39,10 +39,9 @@
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text"><i class="fas fa-lock"></i></span>
-                                <select class="form-select form-select-lg">
-                                    <option name="permission" selected>Permissão</option>
-                                    <option name="permission" value="{{ old('permission') }}">Usuário</option>
-                                    <option name="permission" value="{{ old('permission') }}">Administrador</option>
+                                <select name="permission" class="form-select form-select-lg">
+                                    <option value="usr">Usuário</option>
+                                    <option value="adm">Administrador</option>
                                 </select>
                             </div>
                         </div>
@@ -71,7 +70,11 @@
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
-                                <input id="rua" name="rua" type="text" value="{{ old('logradouro') }}" class="form-control" placeholder="Rua">
+                                <input id="rua" name="logradouro" type="text" value="{{ old('logradouro') }}" class="form-control" placeholder="Rua">
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+                                <input name="numero" type="text" value="{{ old('numero') }}" class="form-control" placeholder="número">
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>

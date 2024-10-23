@@ -23,7 +23,7 @@ class UpdateUserRequest extends StoreUserRequest
         $rules['password'] = [
             'nullable',
             'min:6',
-            'max12'
+            'max:12'
         ];
         return $rules;
     }

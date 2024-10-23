@@ -26,7 +26,6 @@ class UserController extends Controller
     }
 
     public function edit(string $id){
-        // $user = User::where('id', '=', $id)->first();
         if (!$user = User::find($id)) {
             return redirect()->route('users.index')->with('warning', 'usuário não localizado!');
         }
@@ -39,13 +38,32 @@ class UserController extends Controller
         }
         $data = $request->validated();
         if ($user->password) {
-            $data['password'] = bcrypt($user->password); //bcrypt($request->password) erro
+            $data['password'] = bcrypt($request->password); //bcrypt($request->password) erro
         }
-
         $user->update($data);
-
         return redirect()
                 ->route('users.index')
                 ->with('success', 'Usuário atualizado com sucesso!');
     }
+
+    public function show(string $id){
+        if (!$user = User::find($id)) {
+            return redirect()->route('users.index')->with('warning', 'usuário não localizado!');
+        }
+        return view('admin.users.show', compact('user'));
+    }
+
+    public function destroy(string $id){
+        if (!$user = User::find($id)) {
+            return redirect()->route('users.index')->with('warning', 'usuário não localizado!');
+        }
+        if ($user->permission == "adm"){
+            return redirect()->route('users.index')->with('error', 'Você não pode apagar administradores!');
+        }else{
+            $user->delete();
+        }
+
+        return redirect()->route('users.index')->with('success', 'usuário APAGADO!');
+    }
+
 }
