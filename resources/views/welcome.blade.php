@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Projeto Integrador 2 (V1)</title>
+        <title>Projeto Integrador 2024 (001)</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
