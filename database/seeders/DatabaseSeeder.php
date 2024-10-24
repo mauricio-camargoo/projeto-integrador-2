@@ -20,5 +20,12 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('password'),
             'permission' => 'adm',
         ]);
+
+        \App\Models\Medicamento::factory(50)->create();
+
+        \App\Models\UserMedicamento::factory(30)->create();
+
+
+
     }
 }
