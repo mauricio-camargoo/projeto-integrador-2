@@ -11,8 +11,8 @@ Route::delete('/users/{user}/destroy', [UserController::class, 'destroy'])->name
 Route::get('/users/{user}', [UserController::class, 'show'])->name('users.show');
 Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
 Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
-Route::post('/users', [UserController::class, 'store'])->name('users.store');
-Route::get('/users', [UserController::class, 'index'])->name('users.index');
+Route::post('/users', [UserController::class, 'store'])->name('users.store')->can('administrator');
+Route::get('/users', [UserController::class, 'index'])->name('users.index')->can('administrator');
 
 //Rotas das Empresas
 Route::post('/enterprises', [EnterpriseController::class, 'store'])->name('enterprises.store');
