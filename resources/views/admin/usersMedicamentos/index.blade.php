@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Lista de usuários') }}  <a href="{{ route('users.create') }}">(Novo usuário)</a>
+            {{ __('Lista de Medicamentos e Usuarios') }} <a href="#">(Novo usuário)</a>
         </h2>
         <span>
             <x-alert/>
@@ -16,24 +16,27 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Nome</th>
-                                <th>Email</th>
-                                <th>Regra</th>
+                                <th>Usuario</th>
+                                <th>Medicamento</th>
+                                <th>Dosagem</th>
+                                <th>Data Inicial</th>
+                                <th>Data Final</th>
                                 <th>Ações</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($users as $user)
+                            @foreach ($dados as $usermedicamento)
                                 <tr>
-                                    <td>{{ $user->id }}</td>
-                                    <td>{{ $user->name }}</td>
-                                    <td>{{ $user->email }}</td>
-                                    <td>{{ $user->permission }}</td>
+                                    <td>{{ $usermedicamento->id }}</td>
+                                    <td>{{ $usermedicamento->nome_usuario }}</td>
+                                    <td>{{ $usermedicamento->qtd_dosagem }} {{ $usermedicamento->tipo_dosagem }}</td>
+                                    <td>{{ $usermedicamento->data_inicial }}</td>
+                                    <td>{{ $usermedicamento->data_final }}</td>
                                     <td>
-                                        <a href="{{ route('users.edit', $user->id) }}" class="btn btn-warning"><i class="fas fa-pencil-alt"></i></a>
+                                        <a href="#" class="btn btn-warning"><i class="fas fa-pencil-alt"></i></a>
                                     </td>
                                     <td>
-                                        <a href="{{ route('users.show', $user->id) }}" class="btn btn-primary"><i class="fas fa-eye"></i></a>
+                                        <a href="#" class="btn btn-primary"><i class="fas fa-eye"></i></a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -42,7 +45,7 @@
                     <div class="row">
                     </div>
                     <div class="row">
-                        {{ $users->links() }}
+                        {{ $dados->links() }}
                     </div>
                 </div>
             </div>

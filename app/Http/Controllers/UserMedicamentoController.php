@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\UserMedicamento;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
+use function Laravel\Prompts\select;
 
 class UserMedicamentoController extends Controller
 {
@@ -12,7 +15,13 @@ class UserMedicamentoController extends Controller
      */
     public function index()
     {
-        //
+        // dd(UserMedicamento::all());
+        $dados = DB::table('user_medicamentos')
+                    ->join('users','user_medicamentos.id_usuario','=','users.id')
+                    ->select('user_medicamentos.*','users.name as nome_usuario')
+                    ->paginate(10);
+                    // ->get();
+        return view('admin.usersMedicamentos.index', compact('dados'));
     }
 
     /**
