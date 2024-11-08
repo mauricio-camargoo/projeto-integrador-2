@@ -105,7 +105,6 @@ php artisan migrate --seed
 
 Acesse o projeto
 [http://localhost:8989]
-(http://localhost:3411)
 
 login
 ```sh
