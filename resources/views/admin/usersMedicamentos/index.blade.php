@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Lista de Medicamentos e Usuarios') }} <a href="#">(Novo usuário)</a>
+            {{ __('Lista Receitados') }} <a href="#" class="btn btn-success"><i class="fas fa-plus"></i></a>
         </h2>
         <span>
             <x-alert/>
@@ -44,7 +44,7 @@
                     </table>
                     <div class="row">
                     </div>
-                    <div class="row">
+                    <div class="row" style="margin: 15px 0 0 0;">
                         {{ $dados->links() }}
                     </div>
                 </div>

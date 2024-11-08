@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\admin\EnterpriseController;
 use App\Http\Controllers\admin\UserController;
+use App\Http\Controllers\MedicamentoController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserMedicamentoController;
 use Illuminate\Support\Facades\Route;
@@ -17,6 +18,9 @@ Route::get('/users', [UserController::class, 'index'])->name('users.index')->can
 
 //Rotas Medicamentos Usuarios
 Route::get('/usersmedicamentos', [UserMedicamentoController::class, 'index'])->name('usersmedicamentos.index')->can('administrator');
+
+//Rotas Medicamentos Usuarios
+Route::get('/medicamentos', [MedicamentoController::class, 'index'])->name('medicamentos.index')->can('administrator');
 
 //Rotas das Empresas
 Route::post('/enterprises', [EnterpriseController::class, 'store'])->name('enterprises.store');
