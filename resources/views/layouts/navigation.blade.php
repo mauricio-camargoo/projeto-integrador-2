@@ -15,9 +15,17 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('users.index')" :active="request()->routeIs('users')">
-                        {{ __('Users') }}
-                    </x-nav-link>
+                    @can('administrator')
+                        <x-nav-link :href="route('users.index')" :active="request()->routeIs('users')">
+                            {{ __('Users') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('medicamentos.index')" :active="request()->routeIs('medicamentos')">
+                            {{ __('Medicamentos') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('usersmedicamentos.index')" :active="request()->routeIs('usersmedicamentos')">
+                            {{ __('Receitados') }}
+                        </x-nav-link>
+                    @endcan
                 </div>
             </div>
 
