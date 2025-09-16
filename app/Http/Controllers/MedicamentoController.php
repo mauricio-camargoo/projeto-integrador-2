@@ -12,7 +12,8 @@ class MedicamentoController extends Controller
      */
     public function index()
     {
-        //
+        $medicamentos = Medicamento::paginate(10);
+        return view('admin.medicamentos.index', compact('medicamentos'));
     }
 
     /**

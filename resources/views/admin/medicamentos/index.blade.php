@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Lista de usuários') }}  <a href="{{ route('users.create') }}" class="btn btn-success"><i class="fas fa-plus"></i></a>
+            {{ __('Lista de Medicamentos') }}  <a href="#" class="btn btn-success"><i class="fas fa-plus"></i></a>
         </h2>
         <span>
             <x-alert/>
@@ -16,24 +16,24 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Nome</th>
-                                <th>Email</th>
-                                <th>Regra</th>
+                                <th>Medicamento</th>
+                                <th>Miigramas</th>
+                                <th>Laboratório</th>
                                 <th>Ações</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($users as $user)
+                            @foreach ($medicamentos as $medicamento)
                                 <tr>
-                                    <td>{{ $user->id }}</td>
-                                    <td>{{ $user->name }}</td>
-                                    <td>{{ $user->email }}</td>
-                                    <td>{{ $user->permission }}</td>
+                                    <td>{{ $medicamento->id }}</td>
+                                    <td>{{ $medicamento->medicamento }}</td>
+                                    <td>{{ $medicamento->miligramas }}</td>
+                                    <td>{{ $medicamento->laboratorio }}</td>
                                     <td>
-                                        <a href="{{ route('users.edit', $user->id) }}" class="btn btn-warning"><i class="fas fa-pencil-alt"></i></a>
+                                        <a href="#" class="btn btn-warning"><i class="fas fa-pencil-alt"></i></a>
                                     </td>
                                     <td>
-                                        <a href="{{ route('users.show', $user->id) }}" class="btn btn-primary"><i class="fas fa-eye"></i></a>
+                                        <a href="#" class="btn btn-primary"><i class="fas fa-eye"></i></a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -42,7 +42,7 @@
                     <div class="row">
                     </div>
                     <div class="row" style="margin: 15px 0 0 0;">
-                        {{ $users->links() }}
+                        {{ $medicamentos->links() }}
                     </div>
                 </div>
             </div>

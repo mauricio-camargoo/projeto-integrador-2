@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\admin\EnterpriseController;
 use App\Http\Controllers\admin\UserController;
+use App\Http\Controllers\MedicamentoController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserMedicamentoController;
 use Illuminate\Support\Facades\Route;
 
 //Rotas do Usuário
@@ -11,8 +13,14 @@ Route::delete('/users/{user}/destroy', [UserController::class, 'destroy'])->name
 Route::get('/users/{user}', [UserController::class, 'show'])->name('users.show');
 Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
 Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
-Route::post('/users', [UserController::class, 'store'])->name('users.store');
-Route::get('/users', [UserController::class, 'index'])->name('users.index');
+Route::post('/users', [UserController::class, 'store'])->name('users.store')->can('administrator');
+Route::get('/users', [UserController::class, 'index'])->name('users.index')->can('administrator');
+
+//Rotas Medicamentos Usuarios
+Route::get('/usersmedicamentos', [UserMedicamentoController::class, 'index'])->name('usersmedicamentos.index')->can('administrator');
+
+//Rotas Medicamentos Usuarios
+Route::get('/medicamentos', [MedicamentoController::class, 'index'])->name('medicamentos.index')->can('administrator');
 
 //Rotas das Empresas
 Route::post('/enterprises', [EnterpriseController::class, 'store'])->name('enterprises.store');
